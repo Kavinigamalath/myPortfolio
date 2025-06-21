@@ -151,16 +151,14 @@ function ProfileContent({ githubStats }) {
 
         <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
           <motion.a
-            whileHover={{ scale: 1.05 }}
-            href="/Kavini_Gamalath-CV.pdf"
-            download="Kavini_Gamalath-CV.pdf"
-            className="flex items-center px-5 py-2.5 bg-gradient-to-r from-sky-500 to-blue-600 
-                       rounded-lg text-white font-medium
-                       transition-all duration-300 shadow-lg gap-2"
-          >
-            <FiDownload />
-            <span>Download CV</span>
-          </motion.a>
+  whileHover={{ scale: 1.05 }}
+  href={process.env.PUBLIC_URL + "/Kavini_Gamalath-CV.pdf"}
+  download="Kavini_Gamalath-Resume.pdf"
+  className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-sky-500 to-blue-600 rounded-lg text-white font-medium"
+>
+  <FiDownload />
+  <span>Download CV</span>
+</motion.a>
           <motion.a
             whileHover={{ scale: 1.05 }}
             href="https://github.com/Kavinigamalath"
