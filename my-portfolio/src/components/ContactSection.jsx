@@ -147,8 +147,8 @@ function ContactInfo() {
         />
         <ContactItem 
           icon={<FaGlobe className="text-cyan-300 text-xl" />}
-          text="www.kavini-r.dev"
-          link="https://www.kavini-r.dev"
+          text="https://kavinigamalath.github.io/myPortfolio/"
+          link="https://kavinigamalath.github.io/myPortfolio/"
           pulseColor="bg-blue-400"
         />
         <ContactItem 

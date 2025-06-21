@@ -44,8 +44,8 @@ export default function ProjectsSection() {
     {
       title: "My Portfolio Website",
       description: "A modern, responsive personal portfolio website showcasing my projects and professional experience. Features dynamic content loading, responsive design, and modern UI/UX principles.",
-      link: "https://icy-r.dev",
-      Git_link:"",
+      link: "https://kavinigamalath.github.io/myPortfolio/",
+      Git_link:"https://github.com/Kavinigamalath/myPortfolio.git",
       tech: ["React.js", "Vite", "Modern UI/UX design principles", "ESLint", "SWC", "GitHub Pages","Framer Motion"],
       icon: <FiLayout className="text-sky-400" />
     },
