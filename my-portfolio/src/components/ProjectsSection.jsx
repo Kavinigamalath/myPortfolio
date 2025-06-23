@@ -28,14 +28,14 @@ export default function ProjectsSection() {
     },
     {
       title: "Finance Tracker: Backend Project",
-      description: "This backend project involves the development of a RESTful API for managing a Personal Finance Tracker system. The API is designed to ensure secure access, data integrity, and userfriendly interfaces while providing core functionalities such as Manage financial records, Track expenses, set budgets, Analyze spending trends.",
+      description: "This backend project involves the development of a RESTful API for managing a Personal Finance Tracker system. The API is designed to ensure secure access, data integrity, and userfriendly interfaces while providing core functionalities such as Manage financial records, Track expenses, set budgets, Analyze spending trends.The API uses JWT-based authentication to secure endpoints. Bcrypt is used to hash sensitive data like passwords before storing them in the database. API access is role-based, with Admin and User roles. Only Admins can access certain routes. HTTPS should be used to ensure secure communication between the client and server.",
       Git_link:"https://github.com/Kavinigamalath/Backend--Finance-Tracker",
       tech: ["Node.js", "MongoDB", "JWT", "Nodemailer", "REST APIs", "Jest", "Supertest","Helmet (HTTP headers)", "Express Rate Limit"],
       icon: <FiDatabase className="text-sky-400" />
     },
     {
       title: "Country Explore",
-      description: "Developing a web application where travelers and get details about different countries. Supports User Session using google Sign-In via firebase authentication. favorite countries are persistently stored and managed in cloud firestore with responsive user interface.",
+      description: "Country Explorer is a modern, responsive web application designed to provide travelers with comprehensive details about countries worldwide. Built with a mobile-first approach, the app features a clean, intuitive interface powered by Tailwind CSS and Material-UI, ensuring seamless usability across all devices. Users can explore country data, including flags, population, region, and capital, with dynamic filtering capabilities by region, language, or name via dedicated routes (/region/{region}, /name/{name}). Clicking a country reveals in-depth details through its alpha code (/alpha/{code}).To personalize the experience, the app integrates Firebase Authentication for secure Google Sign-In, enabling users to log in, log out, or delete their accounts (used User Session). Favorite countries are persistently stored and managed in Cloud Firestore, allowing users to bookmark and revisit their preferred destinations effortlessly. The combination of Firebase for backend services and React for the frontend ensures a fast, scalable, and user-friendly platform for global travel research.",
       link:"https://countries-app-ahb.pages.dev/",
       Git_link:"https://github.com/Kavinigamalath/countries-app",
       tech: ["React", "Vite", "Firebase Authentication (Google Auth)", "Cloud Firestore", "Tailwind CSS", "Material-UI", "Axios", "Jest","Framer Motion"],
@@ -43,15 +43,15 @@ export default function ProjectsSection() {
     },
     {
       title: "My Portfolio Website",
-      description: "A modern, responsive personal portfolio website showcasing my projects and professional experience. Features dynamic content loading, responsive design, and modern UI/UX principles.",
+      description: "This professional portfolio is a meticulously crafted, high-performance web application designed to showcase my technical skills, creative projects, and professional journey. Built with React and enhanced with Three.js for immersive 3D elements, it delivers a seamless user experience across all devices through responsive design principles. The interface combines modern aesthetics with intuitive navigation, featuring dynamic content loading, smooth animations powered by Framer Motion, and optimized performance for fast loading times. Interactive project showcases demonstrate my development capabilities, while the clean, content-focused layout highlights my professional achievements with clarity and impact. This portfolio represents both my technical expertise in frontend development and my commitment to creating engaging, user-centered digital experiences.",
       link: "https://kavinigamalath.github.io/myPortfolio/",
       Git_link:"https://github.com/Kavinigamalath/myPortfolio.git",
-      tech: ["React.js", "Vite", "Modern UI/UX design principles", "ESLint", "SWC", "GitHub Pages","Framer Motion"],
+      tech: ["React.js", "Vite", "Modern UI/UX design principles", "Three.js", "React Icons", "GitHub Pages","Framer Motion"],
       icon: <FiLayout className="text-sky-400" />
     },
     {
       title: "HealthHorizon: UI design",
-      description: "This project showcases the UI design for a health and fitness tracker app built with Android XML and Kotlin in Android Studio. The app follows the 60-30-10 rule for color.",
+      description: "This project showcases the UI design for a health and fitness tracker app built with Android XML and Kotlin in Android Studio. HealthHorizon is designed to provide users with an intuitive, engaging, and aesthetically pleasing interface to track their fitness and health journey. The app follows the 60-30-10 rule for color.",
       Git_link: "https://github.com/Kavinigamalath/HealthHorizon",
       tech: ["Android XML", "Kotlin", "Android Studio IDE"],
       icon: <FiSmartphone className="text-sky-400" />
@@ -67,7 +67,7 @@ export default function ProjectsSection() {
   ]
 
   return (
-    <section id="projects" className="min-h-screen relative py-20 ">
+    <section id="projects" className="min-h-screen relative py-10 ">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-sky-500 rounded-full filter blur-3xl animate-float"></div>
@@ -81,15 +81,17 @@ export default function ProjectsSection() {
 
       <div className="container mx-auto px-4 relative z-10 max-w-7xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-sky-300 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-teal-400 to-indigo-400 text-transparent bg-clip-text">
             My Projects
+            </span>
           </h2>
           <p className="text-sky-200 max-w-2xl mx-auto">
             A collection of my work showcasing full-stack development, UI/UX design, and problem-solving skills
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-8">
           {projects.map((project, index) => (
             <ProjectCard key={index} project={project} index={index} />
           ))}

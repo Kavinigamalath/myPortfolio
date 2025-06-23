@@ -3,7 +3,7 @@ import { FaGraduationCap, FaCertificate, FaUserTie, FaUsers } from 'react-icons/
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="min-h-screen relative py-20  overflow-hidden">
+    <section id="experience" className="min-h-screen relative py-10  overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <motion.div

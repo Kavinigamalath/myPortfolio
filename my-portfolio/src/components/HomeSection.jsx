@@ -82,9 +82,11 @@ function ProfileContent({ githubStats }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <h1 className="text-3xl font-bold bg-gradient-to-r from-sky-300 to-blue-400 inline-block text-transparent bg-clip-text">
+        <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-teal-400 to-indigo-400 text-transparent bg-clip-text">
           KAVINI GAMALATH
-        </h1>
+            </span>
+        </h2>
         <div className="flex items-center justify-center md:justify-start gap-2 mt-2">
           <FiUser className="text-sky-300" />
           <h2 className="text-xl text-sky-200">
@@ -200,7 +202,7 @@ export default function HomeSection() {
   }, []);
 
   return (
-    <section id="home" className="relative w-full min-h-screen flex items-center justify-center py-12 px-4 md:px-8  pt-24">
+    <section id="home" className="relative w-full min-h-screen flex items-center justify-center py-12 px-4 md:px-8  pt-32">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute top-20 left-10 w-48 h-48 bg-sky-500 rounded-full filter blur-3xl opacity-10 animate-float"></div>

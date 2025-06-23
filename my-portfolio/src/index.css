@@ -126,3 +126,19 @@ html {
   animation: float-delay 6s ease-in-out infinite; 
   animation-delay: 1s;
 }
+
+/* In your global CSS file */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Fix for mobile viewport units */
+@supports (-webkit-touch-callout: none) {
+  .App {
+    height: -webkit-fill-available;
+  }
+}

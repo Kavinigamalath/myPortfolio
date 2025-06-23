@@ -34,7 +34,7 @@ export default function SkillsSection() {
     { name: "Figma", icon: <FaFigma className="text-purple-500" /> },
     { name: "Postman", icon: <SiPostman className="text-orange-500" /> },
     { name: "Framer Motion", icon: <SiFramer className="text-blue-500" /> },
-   
+       
   ];
 
   const softSkills = [
@@ -81,7 +81,7 @@ export default function SkillsSection() {
   };
 
   return (
-    <section id="skills" className="min-h-screen flex items-center justify-center py-20 px-4 relative overflow-hidden">
+    <section id="skills" className="min-h-screen flex items-center justify-center py-10 px-4 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden opacity-20">
         <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-500 rounded-full filter blur-3xl animate-float"></div>
@@ -96,8 +96,10 @@ export default function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-12"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6">
+            <span className="bg-gradient-to-r from-teal-400 to-indigo-400 text-transparent bg-clip-text">
             My Skills & Expertise
+            </span>
           </h2>
           
         </motion.div>
