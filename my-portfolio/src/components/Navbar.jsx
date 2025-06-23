@@ -5,6 +5,17 @@ import { FaFileDownload, FaHome, FaProjectDiagram, FaTools, FaGraduationCap, FaE
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -38,17 +49,18 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
-        className={`flex items-center justify-center py-3 px-6 rounded-full 
+        className={`flex items-center justify-center py-2 px-4 rounded-full 
                    bg-gradient-to-br from-blue-900/90 to-blue-800/90 backdrop-blur-lg
                    shadow-lg border border-blue-500/30 mt-4 pointer-events-auto
                    ${scrolled ? 'shadow-xl shadow-blue-500/20' : ''}
                    transition-all duration-300`}
       >
-        <nav className="flex items-center gap-1 md:gap-4">
+        <nav className="flex items-center gap-1 md:gap-2">
           <NavLink 
             href="#home" 
             active={activeSection === 'home'} 
-            icon={<FaHome className="text-sm md:text-base" />}
+            icon={<FaHome className="text-xs md:text-base" />}
+            isMobile={isMobile}
           >
             Home
           </NavLink>
@@ -56,7 +68,8 @@ export default function Navbar() {
           <NavLink 
             href="#projects" 
             active={activeSection === 'projects'} 
-            icon={<FaProjectDiagram className="text-sm md:text-base" />}
+            icon={<FaProjectDiagram className="text-xs md:text-base" />}
+            isMobile={isMobile}
           >
             Projects
           </NavLink>
@@ -64,7 +77,8 @@ export default function Navbar() {
           <NavLink 
             href="#skills" 
             active={activeSection === 'skills'} 
-            icon={<FaTools className="text-sm md:text-base" />}
+            icon={<FaTools className="text-xs md:text-base" />}
+            isMobile={isMobile}
           >
             Skills
           </NavLink>
@@ -72,35 +86,37 @@ export default function Navbar() {
           <NavLink 
             href="#experience" 
             active={activeSection === 'experience'} 
-            icon={<FaGraduationCap className="text-sm md:text-base" />}
+            icon={<FaGraduationCap className="text-xs md:text-base" />}
+            isMobile={isMobile}
           >
-            Experience
+            experience
           </NavLink>
           
           <NavLink 
             href="#contact" 
             active={activeSection === 'contact'} 
-            icon={<FaEnvelope className="text-sm md:text-base" />}
+            icon={<FaEnvelope className="text-xs md:text-base" />}
+            isMobile={isMobile}
           >
             Contact
           </NavLink>
           
-          <div className="h-6 w-px bg-blue-400/50 mx-2"></div>
+          <div className="h-6 w-px bg-blue-400/50 mx-1 md:mx-2"></div>
           
-          <CVButton />
+          <CVButton isMobile={isMobile} />
         </nav>
       </motion.div>
     </div>
   );
 }
 
-function NavLink({ href, active, icon, children }) {
+function NavLink({ href, active, icon, children, isMobile }) {
   return (
     <motion.a
       href={href}
       whileHover={{ y: -2 }}
       whileTap={{ scale: 0.95 }}
-      className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm md:text-base font-medium
+      className={`flex items-center gap-1 px-2 py-1 md:px-3 md:py-2 rounded-lg text-xs md:text-sm font-medium
                 ${active ? 'bg-blue-700/50 text-white' : 'text-blue-100 hover:text-white'}
                 transition-all duration-300 group relative overflow-hidden`}
     >
@@ -111,7 +127,9 @@ function NavLink({ href, active, icon, children }) {
       >
         {icon}
       </motion.span>
-      <span className="hidden sm:inline">{children}</span>
+      <span className={`${isMobile ? 'text-xs' : 'text-sm'} ${children.length > 5 ? 'hidden md:inline' : 'inline'}`}>
+        {children}
+      </span>
       
       {active && (
         <motion.div 
@@ -132,7 +150,7 @@ function NavLink({ href, active, icon, children }) {
   );
 }
 
-function CVButton() {
+function CVButton({ isMobile }) {
   return (
     <a
       href="https://kavinigamalath.github.io/myPortfolio/Kavini_Gamalath-CV.pdf"
@@ -141,16 +159,17 @@ function CVButton() {
       <motion.button
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-600 to-blue-500
-                   rounded-full text-white text-sm font-semibold shadow-md
-                   hover:shadow-lg hover:shadow-blue-500/30 transition-all"
+        className={`flex items-center gap-1 px-3 py-1 md:px-4 md:py-2 bg-gradient-to-r from-blue-600 to-blue-500
+                   rounded-full text-white text-xs md:text-sm font-semibold shadow-md
+                   hover:shadow-lg hover:shadow-blue-500/30 transition-all`}
       >
-        <span>Download CV</span>
+        <span className={isMobile ? 'hidden xs:inline' : 'inline'}>CV</span>
+        <span className={isMobile ? 'xs:hidden' : 'hidden md:inline'}>Download CV</span>
         <motion.div
           animate={{ y: [0, 2, 0] }}
           transition={{ duration: 1.5, repeat: Infinity }}
         >
-          <FaFileDownload className="text-blue-100" />
+          <FaFileDownload className="text-blue-100 text-xs md:text-sm" />
         </motion.div>
       </motion.button>
     </a>

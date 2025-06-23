@@ -134,6 +134,17 @@ html, body {
   width: 100%;
   min-height: 100vh;
   overflow-x: hidden;
+  position: relative;
+}
+
+body {
+  display: block; /* Remove flex display */
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 /* Fix for mobile viewport units */

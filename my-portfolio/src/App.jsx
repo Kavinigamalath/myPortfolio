@@ -32,7 +32,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App w-full max-w-full overflow-x-hidden">
+    <div className="App w-full max-w-[100vw] overflow-x-hidden">
       {/* Enhanced Starry Background */}
       <div 
         className="fixed inset-0 w-full h-full z-[-1] bg-gradient-to-b from-black via-blue-900/10 to-black"
@@ -49,8 +49,9 @@ function App() {
             position: 'fixed',
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
+            width: '100vw',
+            height: '100vh',
+            touchAction: 'none' // Prevent touch conflicts
           }}
         >
           <ambientLight intensity={0.25} />
@@ -122,16 +123,18 @@ function App() {
       </div>
 
       {/* Content */}
-      <div className="content relative z-10 w-full overflow-x-hidden">
+       <div className="content relative z-10 w-full max-w-[100vw] overflow-x-hidden px-4 sm:px-6">
         <Navbar />
+        <div className="mx-auto w-full max-w-7xl">
         <HomeSection />
         <ProjectsSection />
         <SkillsSection />
         <ExperienceSection />
         <ContactSection />
+        </div>
+        </div>
         <Footer />
-      </div>
-
+        
       {/* Global Styles */}
       <style jsx global>{`
         @keyframes pulseBackground {
