@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { FiDownload, FiGithub, FiBook, FiCode, FiAward, FiUser, FiStar } from "react-icons/fi";
 import { FaReact,FaTools, FaFigma,FaNodeJs, FaPython, FaJava,FaDocker } from "react-icons/fa";
-import { SiJavascript,SiPostman, SiMongodb,SiFramer,SiVite,SiCplusplus } from "react-icons/si";
+import { SiJavascript,SiPostman, SiMongodb, SiExpress, SiFramer,SiVite,SiCplusplus } from "react-icons/si";
 import { IoHardwareChip, IoShieldCheckmark } from 'react-icons/io5';
 
 // 3D Profile Sphere Component
@@ -135,6 +135,7 @@ function ProfileContent({ githubStats }) {
             <SkillBadge skill="Postman" icon={<SiPostman className="text-orange-500" /> }/>
             <SkillBadge skill="Framer Motion" icon={<SiFramer className="text-blue-500" /> }/>
             <SkillBadge skill="C/C++" icon={<SiCplusplus className="text-blue-600" /> }/>
+            <SkillBadge skill="Express.js" icon={<SiExpress className="text-gray-300" />} />
             
           </div>
         </div>
