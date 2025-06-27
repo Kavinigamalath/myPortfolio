@@ -1,6 +1,6 @@
 # Kavini Gamalath - Portfolio Website
 
-![To See my protfolio website click here ](https://kavinigamalath.github.io/myPortfolio/)
+[Click here to view my portfolio website](https://kavinigamalath.github.io/myPortfolio/)
 
 ##  Introduction
 
@@ -18,7 +18,7 @@ Built with cutting-edge technologies including React, Three.js, and Framer Motio
 - **Dynamic Content**: GitHub API integration for real-time stats
 - **Performance Optimized**: Fast loading with Vite and optimized assets
 
-## 🛠 Technologies Used
+##  Technologies Used
 
 ### Frontend
 - ![React](https://img.shields.io/badge/-React-61DAFB?logo=react&logoColor=white)
