@@ -136,7 +136,7 @@ function App() {
         <Footer />
         
       {/* Global Styles */}
-      <style jsx global>{`
+      <style jsx="true" global="true">{`
         @keyframes pulseBackground {
           0% { opacity: 0.7; }
           50% { opacity: 0.9; }

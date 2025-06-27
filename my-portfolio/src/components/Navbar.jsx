@@ -163,7 +163,6 @@ function CVButton({ isMobile }) {
                    rounded-full text-white text-xs md:text-sm font-semibold shadow-md
                    hover:shadow-lg hover:shadow-blue-500/30 transition-all`}
       >
-        <span className={isMobile ? 'hidden xs:inline' : 'inline'}>CV</span>
         <span className={isMobile ? 'xs:hidden' : 'hidden md:inline'}>Download CV</span>
         <motion.div
           animate={{ y: [0, 2, 0] }}

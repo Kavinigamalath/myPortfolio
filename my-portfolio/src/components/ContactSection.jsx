@@ -4,7 +4,7 @@ import { SiThreedotjs } from 'react-icons/si'
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="min-h-screen py-10 md:py-20 relative w-full flex items-center justify-center overflow-hidden px-4">
+    <section id="contact" className="min-h-screen py-10 md:py-10 relative w-full flex items-center justify-center overflow-hidden px-4">
       
       {/* Animated floating particles - reduced count for mobile */}
       <div className="absolute inset-0 overflow-hidden">

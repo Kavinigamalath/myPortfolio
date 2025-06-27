@@ -59,15 +59,15 @@ export default function SkillsSection() {
     { name: "Full Stack Development", icon: "🛠️" },
     { name: "Backend Development", icon: "🏗️" },
     { name: "Cloud Computing", icon: "☁️" },
-    { name: "Amazon Web Services (AWS)", icon: "🌩️" },
+    { name: "Amazon Web Services ", icon: "🌩️" },
     { name: "DevOps & CI/CD", icon: "🔄" },
     { name: "UI/UX Design", icon: "🎨" },
     { name: "Linux & Shell Scripting", icon: "🐧" },
     { name: "Open Source Contributions", icon: "📂" },
-    { name: "Artificial Intelligence & Machine Learning", icon: "🤖" },
+    { name: "AI & Machine Learning", icon: "🤖" },
     { name: "Blockchain & Web3", icon: "⛓️" },
-    { name: "Internet of Things (IoT)", icon: "🌐" },
-    { name: "Augmented & Virtual Reality (AR/VR)", icon: "👓" },
+    { name: "Internet of Things", icon: "🌐" },
+    { name: "Augmented & Virtual Reality", icon: "👓" },
 
   ];
 
@@ -177,11 +177,14 @@ function SkillBadge({ skill, icon }) {
       className="group relative"
     >
       <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-400 to-cyan-500 rounded-lg opacity-40 blur-sm group-hover:opacity-70 transition duration-300"></div>
-      <div className="relative px-2 py-3 bg-blue-900/70 rounded-lg text-white font-medium cursor-default
+      <div className="relative w-full h-full min-h-[100px] p-2 bg-blue-900/70 rounded-lg text-white font-medium cursor-default
                     border border-blue-500/20 backdrop-blur-sm
-                    transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(56,182,255,0.3)] flex flex-col items-center gap-2">
-        <div className="text-xl md:text-2xl">{icon}</div>
-        <span className="text-xs md:text-sm text-center font-medium">{skill}</span>
+                    transform transition-all duration-300 hover:scale-105 hover:shadow-[0_0_15px_rgba(56,182,255,0.3)] 
+                    flex flex-col items-center justify-center gap-2">
+        <div className="text-xl md:text-2xl flex-shrink-0">{icon}</div>
+        <span className="text-xs md:text-sm text-center font-medium line-clamp-2">
+          {skill}
+        </span>
       </div>
     </motion.div>
   );

@@ -25,17 +25,18 @@ function ProfileSphere() {
 // Custom components
 function StatBox({ number, label, icon }) {
   return (
-    <div className="bg-sky-100/20 p-3 rounded-lg border border-sky-200/30 backdrop-blur-sm">
-      <div className="flex items-center gap-2">
-        {icon}
+    <div className="bg-sky-100/20 p-4 sm:p-5 rounded-xl border border-sky-200/30 backdrop-blur-sm w-full">
+      <div className="flex items-center gap-3">
+        <div className="text-white text-2xl text-center">{icon}</div>
         <div>
-          <div className="text-xl font-bold text-white">{number}</div>
-          <div className="text-xs text-sky-100">{label}</div>
+          <div className="text-xl sm:text-2xl font-bold text-white text-center">{number}</div>
+          <div className="text-xs sm:text-sm text-sky-100 text-center">{label}</div>
         </div>
       </div>
     </div>
   );
 }
+
 
 function SkillBadge({ skill, icon }) {
   return (
@@ -140,17 +141,19 @@ function ProfileContent({ githubStats }) {
           </div>
         </div>
 
-        <div className="mt-6">
-          <div className="flex items-center gap-2 text-sky-300 justify-center md:justify-start">
-            <FiStar className="text-lg" />
-            <h3 className="text-lg font-semibold">GitHub Stats</h3>
-          </div>
-          <div className="grid grid-cols-3 gap-3 mt-3 max-w-xs mx-auto md:mx-0">
-            <StatBox number={githubStats.public_repos} label="Repos" icon={<FiCode className="text-sky-300" />} />
-            <StatBox number={githubStats.followers} label="Followers" icon={<FiUser className="text-sky-300" />} />
-            <StatBox number={githubStats.following} label="Following" icon={<FiUser className="text-sky-300" />} />
-          </div>
-        </div>
+        <div className="mt-6 px-4 md:px-0">
+  <div className="flex items-center gap-2 text-sky-300 justify-center md:justify-start">
+    <FiStar className="text-lg" />
+    <h3 className="text-lg font-semibold">GitHub Stats</h3>
+  </div>
+
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mt-4 max-w-3xl mx-auto md:mx-0">
+    <StatBox number={githubStats.public_repos} label="Repos" icon={<FiCode className="text-sky-300" />} />
+    <StatBox number={githubStats.followers} label="Followers" icon={<FiUser className="text-sky-300" />} />
+    <StatBox number={githubStats.following} label="Following" icon={<FiUser className="text-sky-300" />} />
+  </div>
+</div>
+
 
         <div className="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
           <motion.a
@@ -203,7 +206,7 @@ export default function HomeSection() {
   }, []);
 
   return (
-    <section id="home" className="relative w-full min-h-screen flex items-center justify-center py-12 px-4 md:px-8  pt-32">
+    <section id="home" className="relative w-full min-h-screen flex items-center justify-center py-10 px-4 md:px-8  pt-32">
       {/* Floating background elements */}
       <div className="absolute inset-0 overflow-hidden z-0">
         <div className="absolute top-20 left-10 w-48 h-48 bg-sky-500 rounded-full filter blur-3xl opacity-10 animate-float"></div>

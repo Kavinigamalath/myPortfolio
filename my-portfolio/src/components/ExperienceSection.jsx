@@ -62,11 +62,13 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               className="mb-12"
             >
+              <div className="flex justify-center">
               <SectionHeader 
                 icon={<FaGraduationCap className="text-2xl" />}
                 title="Education"
                 color="from-indigo-500 to-teal-500"
               />
+              </div>
               
               <EducationCard 
                 title="BSc (Hons) in Information Technology (Specialized in SE)"
@@ -101,17 +103,13 @@ export default function ExperienceSection() {
               transition={{ duration: 0.6, delay: 0.4 }}
               viewport={{ once: true }}
             >
+              <div className="flex justify-center px-4 sm:px-0">
               <SectionHeader 
-                icon={<FaUsers className="text-2xl" />}
+                icon={<FaUsers className="text-2xl " />}
                 title="Extracurricular Activities"
                 color="from-amber-500 to-orange-500"
-              />
-              
-              <ExtracurricularCard 
-                title="Member"
-                period="February 2025 - Present"
-                organization="IEEE Student Branch of SLIIT"
-              />
+              />             
+              </div>
 
               <ExtracurricularCard 
                 title="Organizing Committee Member"
@@ -131,12 +129,14 @@ export default function ExperienceSection() {
               viewport={{ once: true }}
               className="mb-12"
             >
+              <div className="flex justify-center">
               <SectionHeader 
                 icon={<FaCertificate className="text-2xl" />}
                 title="Certifications"
                 color="from-emerald-500 to-cyan-500"
               />
-              
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <CertificationCard 
                   title="Postman API Fundamentals Student Expert"
@@ -194,33 +194,8 @@ export default function ExperienceSection() {
               </div>
             </motion.div>
 
-            {/* Experience - Uncomment when ready */}
-            {/* <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              viewport={{ once: true }}
-            >
-              <SectionHeader 
-                icon={<FaUserTie className="text-2xl" />}
-                title="Experience"
-                color="from-purple-500 to-pink-500"
-              />
-              
-              <ExperienceCard 
-                title="Software Engineer Intern"
-                period="November 2024 - Present"
-                company="IFS"
-                location="Colombo, Sri Lanka (Hybrid)"
-                bullets={[
-                  "Optimized PL/SQL and Oracle SQL queries",
-                  "Collaborated with QA teams on test cases",
-                  "Modernized legacy Java EE systems",
-                  "Participated in Agile workflows",
-                  "Maintained server-side components"
-                ]}
-              />
-            </motion.div> */}
+            {/* Work Experience */}
+            
           </div>
         </div>
       </div>
@@ -230,7 +205,7 @@ export default function ExperienceSection() {
 
 function SectionHeader({ icon, title, color }) {
   return (
-    <div className="flex items-center gap-4 mb-6">
+    <div className="flex items-center text-center gap-4 mb-6">
       <div className={`p-3 bg-gradient-to-r ${color} rounded-lg text-white`}>
         {icon}
       </div>
