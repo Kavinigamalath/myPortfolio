@@ -116,6 +116,12 @@ export default function ExperienceSection() {
                 period="March 2019 - March 2020"
                 organization="Social Services Society, Visakha Vidyalaya"
               />
+              <ExtracurricularCard 
+                title="Project Group Leader"
+                period="2023-2024 (Year 1 & 2)"
+                organization="SLIIT"
+                //description="Led student project teams during Year 1 Semester 1 & 2 and Year 2 Semester 1 (2021-2022), coordinating group work, managing timelines, and ensuring successful project delivery."
+              />
             </motion.div>
           </div>
 

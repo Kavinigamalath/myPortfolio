@@ -1,8 +1,10 @@
+import React from 'react';
 import { motion } from 'framer-motion'
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sphere } from '@react-three/drei'
 import { FiGithub, FiExternalLink, FiCode, FiDatabase, FiCpu, FiLayers, FiSmartphone, FiLayout } from 'react-icons/fi'
 import { FaReact, FaNodeJs, FaFigma } from 'react-icons/fa'
+import { SiOracle } from 'react-icons/si';
 
 function TechSphere() {
   return (
@@ -42,6 +44,13 @@ export default function ProjectsSection() {
       icon: <FaReact className="text-sky-400" />
     },
     {
+      "title": "Customer Management System",
+      "description": "Developed a robust web application using Java Servlets, JSP, and MySQL to manage customer data with full CRUD functionality. The system features a responsive UI with custom CSS, Bootstrap, and Font Awesome icons, ensuring a seamless user experience across devices. Implemented security measures like password strength validation, input sanitization, and SQL injection prevention via JDBC prepared statements. The backend leverages Java 17, Servlet 4.0, and Maven for dependency management, while MySQL 8.0 handles data storage with optimized connection pooling. Key highlights include form validations (phone number formatting), modern animations, and a mobile-first design. Hosted on Apache Tomcat 9.0+, this project demonstrates my full-stack proficiency in Java EE technologies and database integration.",
+      "Git_link": "https://github.com/Kavinigamalath/Customer-Management-System", // Update if different
+      "tech": ["Java", "Servlet", "JSP", "MySQL", "Bootstrap", "JDBC"],
+      "icon": <SiOracle className="text-sky-500" /> // Using Java icon as primary technology
+    },
+    {
       title: "My Portfolio Website",
       description: "This professional portfolio is a meticulously crafted, high-performance web application designed to showcase my technical skills, creative projects, and professional journey. Built with React and enhanced with Three.js for immersive 3D elements, it delivers a seamless user experience across all devices through responsive design principles. The interface combines modern aesthetics with intuitive navigation, featuring dynamic content loading, smooth animations powered by Framer Motion, and optimized performance for fast loading times. Interactive project showcases demonstrate my development capabilities, while the clean, content-focused layout highlights my professional achievements with clarity and impact. This portfolio represents both my technical expertise in frontend development and my commitment to creating engaging, user-centered digital experiences.",
       link: "https://kavinigamalath.github.io/myPortfolio/",
@@ -51,7 +60,7 @@ export default function ProjectsSection() {
     },
     {
       title: "HealthHorizon: UI design",
-      description: "This project showcases the UI design for a health and fitness tracker app built with Android XML and Kotlin in Android Studio. HealthHorizon is designed to provide users with an intuitive, engaging, and aesthetically pleasing interface to track their fitness and health journey. The app follows the 60-30-10 rule for color.",
+      description: "This project showcases the UI design for a health and fitness tracker app built with Android XML and Kotlin in Android Studio. HealthHorizon is designed to provide users with an intuitive, engaging, and aesthetically pleasing interface to track their fitness and health journey.HealthHorizon makes it easier for individuals to track and visualize their fitness activities, ensuring they stay motivated and on track to achieve their health and fitness goals. It provides a clear overview of health metrics and workout history, helping users stay focused and achieve their targets. The app follows the 60-30-10 rule for color.",
       Git_link: "https://github.com/Kavinigamalath/HealthHorizon",
       tech: ["Android XML", "Kotlin", "Android Studio IDE"],
       icon: <FiSmartphone className="text-sky-400" />
@@ -107,55 +116,74 @@ function ProjectCard({ project, index }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1 }}
-      className="bg-sky-900/30 backdrop-blur-sm rounded-xl overflow-hidden border border-sky-700/50
-                shadow-lg hover:shadow-xl hover:shadow-sky-500/10 transition-all duration-300
-                flex flex-col h-full"
+      className="bg-gradient-to-br from-sky-900/30 to-sky-900/10 backdrop-blur-sm rounded-xl overflow-hidden border border-sky-700/50
+                shadow-lg hover:shadow-xl hover:shadow-sky-500/20 transition-all duration-300
+                flex flex-col h-full hover:border-sky-600/70 group"
     >
-      <div className="p-6 flex-1">
+      <div className="p-6 flex-1 flex flex-col">
+        {/* Header with icon and title */}
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-sky-800/50 rounded-lg">
-              {project.icon}
+            <div className="p-3 bg-sky-800/50 rounded-xl group-hover:bg-sky-700/60 transition-colors">
+              {React.cloneElement(project.icon, { className: "text-sky-300 text-xl" })}
             </div>
-            <h3 className="text-xl font-bold text-sky-100">{project.title}</h3>
-          </div>
-          <div className="flex gap-2">
-            {project.link && (
-              <a href={project.link} target="_blank" rel="noopener noreferrer" 
-                className="text-sky-300 hover:text-sky-100 transition-colors p-1"
-                aria-label="Live Demo">
-                <FiExternalLink size={18} />
-              </a>
-            )}
-            {project.Git_link && (
-              <a href={project.Git_link} target="_blank" rel="noopener noreferrer" 
-                className="text-sky-300 hover:text-sky-100 transition-colors p-1"
-                aria-label="GitHub Repository">
-                <FiGithub size={18} />
-              </a>
-            )}
+            <h3 className="text-xl font-bold text-sky-100 group-hover:text-white transition-colors">
+              {project.title}
+            </h3>
           </div>
         </div>
 
-        <p className="text-sky-200 mb-6 text-sm leading-relaxed">{project.description}</p>
+        {/* Description - Added text-justify here */}
+        <p className="text-sky-200/90 mb-6 text-sm leading-relaxed text-justify">
+          {project.description}
+        </p>
 
+         {/* Tech Stack */}
         <div className="mt-auto">
           <div className="flex items-center gap-2 text-sky-300 mb-3 text-sm font-medium">
-            <FiCode />
-            <span>Tech Stack</span>
+            <FiCode className="opacity-80" />
+            <span>Built With</span>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-2 mb-6">
             {project.tech.map((tech, i) => (
               <span 
                 key={i} 
-                className="px-3 py-1 bg-sky-800/50 text-xs rounded-full border border-sky-700 text-sky-200"
+                className="px-3 py-1 bg-sky-800/40 text-xs rounded-full border border-sky-700/50 text-sky-200 hover:bg-sky-700/60 hover:border-sky-600 transition-colors"
               >
                 {tech}
               </span>
             ))}
           </div>
+
+
+          {/* Action Buttons */}
+          <div className="flex gap-3 mt-4 pt-4 border-t border-sky-800/50">
+            {project.Git_link && (
+              <a
+                href={project.Git_link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-sky-800/50 hover:bg-sky-700/60 text-sky-100 rounded-lg text-sm font-medium transition-colors border border-sky-700/50 hover:border-sky-600/70 flex-1 justify-center"
+              >
+                <FiGithub size={16} />
+                <span>View Code</span>
+              </a>
+            )}
+            {project.link && (
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 px-4 py-2 bg-sky-700/60 hover:bg-sky-600/70 text-white rounded-lg text-sm font-medium transition-colors border border-sky-600/50 hover:border-sky-500/70 flex-1 justify-center"
+              >
+                <FiExternalLink size={16} />
+                <span>Live Demo</span>
+              </a>
+            )}
+          </div>
+          </div>
         </div>
-      </div>
+    
     </motion.div>
-  )
+  );
 }

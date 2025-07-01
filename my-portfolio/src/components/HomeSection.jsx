@@ -4,7 +4,7 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere } from "@react-three/drei";
 import { FiDownload, FiGithub, FiBook, FiCode, FiAward, FiUser, FiStar } from "react-icons/fi";
 import { FaReact,FaTools, FaFigma,FaNodeJs, FaPython, FaJava,FaDocker } from "react-icons/fa";
-import { SiJavascript,SiPostman, SiMongodb, SiExpress, SiFramer,SiVite,SiCplusplus } from "react-icons/si";
+import { SiJavascript,SiPostman, SiMysql, SiMongodb, SiExpress, SiFramer,SiVite,SiCplusplus } from "react-icons/si";
 import { IoHardwareChip, IoShieldCheckmark } from 'react-icons/io5';
 
 // 3D Profile Sphere Component
@@ -107,7 +107,7 @@ function ProfileContent({ githubStats }) {
             <h3 className="text-lg font-semibold">Education</h3>
           </div>
           <EducationItem 
-            degree="BSc (Hons) in IT (Software Engineering)"
+            degree="BSc (Hons) in Information Technology Specialising in Software Engineering"
             institution="Sri Lanka Institute of Information Technology"
           />
           <EducationItem 
@@ -137,6 +137,8 @@ function ProfileContent({ githubStats }) {
             <SkillBadge skill="Framer Motion" icon={<SiFramer className="text-blue-500" /> }/>
             <SkillBadge skill="C/C++" icon={<SiCplusplus className="text-blue-600" /> }/>
             <SkillBadge skill="Express.js" icon={<SiExpress className="text-gray-300" />} />
+            <SkillBadge skill="MySQL" icon={<SiMysql className="text-blue-500" />} />
+
             
           </div>
         </div>
