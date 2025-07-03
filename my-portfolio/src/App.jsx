@@ -35,7 +35,7 @@ function App() {
     <div className="App w-full max-w-[100vw] overflow-x-hidden">
       {/* Enhanced Starry Background */}
       <div 
-        className="fixed inset-0 w-full h-full z-[-1] bg-gradient-to-b from-black via-blue-900/10 to-black"
+        className="fixed inset-0 w-full h-full z-[-1] bg-gradient-to-b from-black to-gray-900"
         style={{
           width: `${dimensions.width}px`,
           height: `${dimensions.height}px`
