@@ -119,11 +119,6 @@ To personalize this portfolio:
 4. Update experience in `ExperienceSection.jsx`
 5. Change contact details in `ContactSection.jsx`
 
-##  Performance Metrics
-
-- Lighthouse Score: 95+ (Performance), 100 (Accessibility)
-- Load Time: <1.5s on average
-- Bundle Size: <500kb (gzipped)
 
 ##  Contributing
 
