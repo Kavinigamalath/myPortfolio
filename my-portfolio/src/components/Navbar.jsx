@@ -153,7 +153,7 @@ function NavLink({ href, active, icon, children, isMobile }) {
 function CVButton({ isMobile }) {
   return (
     <a
-      href="https://kavinigamalath.github.io/myPortfolio/Kavini_Gamalath-CV.pdf"
+      href="https://kavinigamalath.github.io/myPortfolio/Kavini_Gamalath_CV.pdf"
       download="Kavini_Gamalath-CV.pdf"
     >
       <motion.button
