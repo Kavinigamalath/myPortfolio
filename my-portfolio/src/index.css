@@ -135,6 +135,9 @@ html, body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
+  overflow-y: auto;
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
 }
 
 body {

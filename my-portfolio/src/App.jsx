@@ -51,7 +51,8 @@ function App() {
             left: 0,
             width: '100vw',
             height: '100vh',
-            touchAction: 'none' // Prevent touch conflicts
+            touchAction: dimensions.isMobile ? 'auto' : 'none',
+            pointerEvents: dimensions.isMobile ? 'none' : 'auto'
           }}
         >
           <ambientLight intensity={0.25} />
@@ -96,13 +97,15 @@ function App() {
             intensity={1.5}
           />
           
-          <OrbitControls 
-            enableZoom={false}
-            autoRotate
-            autoRotateSpeed={dimensions.isMobile ? 0.4 : 0.9}
-            enablePan={false}
-            rotateSpeed={0.5}
-          />
+          {!dimensions.isMobile && (
+            <OrbitControls 
+              enableZoom={false}
+              autoRotate
+              autoRotateSpeed={0.9}
+              enablePan={false}
+              rotateSpeed={0.5}
+            />
+          )}
         </Canvas>
         
         {/* Animated Gradient Overlay */}
@@ -144,9 +147,6 @@ function App() {
         }
         html {
           scroll-behavior: smooth;
-        }
-        body {
-          overscroll-behavior-y: none;
         }
       `}</style>
     </div>

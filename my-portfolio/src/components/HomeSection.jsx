@@ -91,14 +91,19 @@ function ProfileContent({ githubStats }) {
         <div className="flex items-center justify-center md:justify-start gap-2 mt-2">
           <FiUser className="text-sky-300" />
           <h2 className="text-xl text-sky-200">
-            23yrs, Software Engineering Student
+            23yrs, Financial Engineering Student
           </h2>
         </div>
         
-        <p className="mt-4 text-sky-100 max-w-2xl mx-auto md:mx-0">
-          I'm a passionate Software Engineering student at SLIIT, specializing in 
+        <p className="mt-4 text-sky-100 max-w-2xl mx-auto md:mx-0 text-justify">
+          I'm a Financial Engineering undergraduate pursuing a Bachelor of Business Management in Financial Engineering, alongside
+          a BSc (Hons) in Software Engineering, with a strong foundation in financial analysis, quantitative techniques, and
+          data-driven decision making. Experienced in applying programming and analytical skills to financial modeling, business
+          analytics, automation, and fintech-related solutions. Actively seeking a finance or financial engineering internship to
+          contribute to investment analysis, risk management, fintech development, or corporate finance operations.
+          {/* I'm a passionate Software Engineering student at SLIIT, specializing in 
           modern web development, AI applications, and cloud technologies. 
-          Dedicated to creating elegant solutions through clean code and innovative thinking.
+          Dedicated to creating elegant solutions through clean code and innovative thinking. */}
         </p>
 
         <div className="mt-6">
@@ -107,13 +112,14 @@ function ProfileContent({ githubStats }) {
             <h3 className="text-lg font-semibold">Education</h3>
           </div>
           <EducationItem 
-            degree="BSc (Hons) in Information Technology Specialising in Software Engineering"
-            institution="Sri Lanka Institute of Information Technology"
-          />
-          <EducationItem 
             degree="B.B.Mgt Honours in Financial Engineering"
             institution="University of Kelaniya"
           />
+          <EducationItem 
+            degree="BSc (Hons) in Information Technology Specialising in Software Engineering"
+            institution="Sri Lanka Institute of Information Technology"
+          />
+          
         </div>
 
         <div className="mt-6">
