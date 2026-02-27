@@ -154,7 +154,7 @@ function CVButton({ isMobile }) {
   return (
     <a
       href="https://kavinigamalath.github.io/myPortfolio/Kavini_Gamalath_CV.pdf"
-      download="Kavini_Gamalath-CV.pdf"
+      download="Kavini_Gamalath_CV.pdf"
     >
       <motion.button
         whileHover={{ scale: 1.05 }}
