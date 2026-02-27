@@ -167,7 +167,7 @@ function ProfileContent({ githubStats }) {
           <motion.a
             whileHover={{ scale: 1.05 }}
             href="https://kavinigamalath.github.io/myPortfolio/Kavini_Gamalath_CV.pdf"
-            download="Kavini_Gamalath-CV.pdf"
+            download="Kavini_Gamalath_CV.pdf"
             className="flex items-center px-5 py-2.5 bg-gradient-to-r from-sky-500 to-blue-600 
                        rounded-lg text-white font-medium
                        transition-all duration-300 shadow-lg gap-2"
